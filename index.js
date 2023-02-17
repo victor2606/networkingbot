@@ -1,11 +1,11 @@
 const { Telegraf, Markup, Scenes, session } = require('telegraf');
 const { JsonBase, User, Users } = require('./tools.js')
-const times = require('./times');
+const times = require('./times.js');
 const { stat } = require('fs');
 
 const users = new JsonBase('users', [], './database')
 
-const invite_link = 'https://t.me/+jM9wx24WlD9lZDRi',
+const invite_link = 'https://t.me/+JGC2BUO37XxiNjI6',
     workSchedule = [
         [ "Понедельник", 8, 00,   23, 00],
         [ "Вторник", 8, 00,   23, 00 ],
@@ -177,7 +177,7 @@ bot
 .then(console.log('Бот запущен!'))
 
 const sendCheck = (ctx) => {
-    ctx.send(`Привет, ${ctx.genMention()}\nВы находитесь сейчас в режиме только-чтение, чтобы писать в чат пройдите проверку. Нажмите кнопку внизу сообщения, чтобы начать проверку.`, Markup
+    ctx.send(`Привет, ${ctx.genMention}\nВы находитесь сейчас в режиме только-чтение, чтобы писать в чат пройдите проверку. Нажмите кнопку внизу сообщения, чтобы начать проверку.`, Markup
         .inlineKeyboard([
             [Markup.button.url('Пройти проверку', `https://t.me/${ctx.botInfo.username}?start=${ctx.chat.id}`)]
         ])
